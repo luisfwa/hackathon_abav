@@ -13,6 +13,13 @@ class SignUpViajante(forms.ModelForm):
 		fields = ["nome", "email", "senha", "telefone"]
 
 
+
+class LoginViajante(forms.ModelForm):
+	class Meta:
+		model = Viajante
+		fields = ["email", "senha"]
+
+
 class SignUpTema(forms.ModelForm):
 	class Meta:
 		model = Tema

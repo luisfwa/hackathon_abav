@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('viajante.urls')), 
     url(r'^form/$', include('viajante.urls')),
+    url(r'^dash/$', include('viajante.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

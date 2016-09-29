@@ -32,9 +32,11 @@
 
 		<div class="login w3layouts agileits">
 			<h2>Entre!</h2>
-			<form action="#" method="post">
-				<input type="text" Name="Userame" placeholder="Username" required="">
-				<input type="password" Name="Password" placeholder="Password" required="">
+			<form action="/dash/home" method="post">{% csrf_token %}
+				{{form2.as_p}}
+				<div class="send-button w3layouts agileits">
+					<input type="submit" value="Entrar">
+			</div>
 			</form>
 			<ul class="tick w3layouts agileits">
 				<li>
@@ -42,11 +44,7 @@
 					<label for="brand1"><span></span>Lembrar</label>
 				</li>
 			</ul>
-			<div class="send-button w3layouts agileits">
-				<form>
-					<input type="submit" value="Entrar">
-				</form>
-			</div>
+			
 			<a href="#">Esqueceu sua Senha?</a>
 			<div class="social-icons w3layouts agileits">
 				<p>- Ou Logue-se com o Facebook-</p>
@@ -62,7 +60,7 @@
 
 		<div class="register w3layouts agileits">
 			<h2>Cadastre-se</h2>
-			<form action="/" method="post">{% csrf_token %}
+			<form action="/dash/home" method="post">{% csrf_token %}
 				{{form.as_p}}
 
 				<div class="send-button w3layouts agileits">

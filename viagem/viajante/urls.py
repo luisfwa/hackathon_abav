@@ -8,6 +8,9 @@ urlpatterns = [
 	url(r'^admin/', admin.site.urls),
 	url(r'^$', views.home),
 	url(r'^form/', views.form),
+	url(r'^dash/home', views.dash),
+	url(r'^dash/charts', views.charts),
+	url(r'^dash/modals', views.modals),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

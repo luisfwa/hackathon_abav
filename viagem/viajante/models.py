@@ -57,6 +57,7 @@ class Viagem(models.Model):
 	duracao = models.IntegerField(null=False, blank=False)
 	dinheiro_total = models.FloatField(null=True, blank=True)
 	origem = models.ForeignKey(Cidade, related_name="Origem")
+	pontuacao = models.IntegerField(null=True, blank=True, default=0)
 
 
 	def __str__(self):
