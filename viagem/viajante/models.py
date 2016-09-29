@@ -5,8 +5,9 @@ from django.db import models
 # Create your models here.
 
 class Pessoa(models.Model):
-	email = models.EmailField()
+	email = models.EmailField(blank=False, null=False)
 	nome = models.CharField(max_length=120, blank=False, null=False)
+	telefone = models.CharField(max_length=15, blank=True, null=True)
 	senha = models.CharField(max_length=20, blank=False, null=False)
 	timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 	updated = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -24,9 +25,9 @@ class Tema(models.Model):
 
 
 class Viajante(Pessoa):
-	idade = models.IntegerField(null=False, blank=False)
-	dinheiro = models.FloatField(null=False, blank=False)
-	tema = models.ForeignKey(Tema, verbose_name="Tema")
+	idade = models.IntegerField(null=True, blank=True)
+	dinheiro = models.FloatField(null=True, blank=True)
+	tema = models.ForeignKey(Tema, verbose_name="Tema",  null=True, blank=True)
 
 
 class Agencia(models.Model):
@@ -38,7 +39,6 @@ class Agencia(models.Model):
 
 class Agente(Pessoa):
 	agencia = models.ForeignKey(Agencia, related_name="Agencia")
-	telefone = models.CharField(max_length=15, blank=False, null=False)
 	cpf = models.CharField(max_length=15, blank=False, null=False)
 
 
@@ -60,6 +60,5 @@ class Viagem(models.Model):
 
 
 	def __str__(self):
-		return self.destino
-
+		return self.destino.nome
 

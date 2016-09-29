@@ -1,11 +1,21 @@
 from django.shortcuts import render
+from forms import SignUpViajante
 
 def home(request):
-	print (request)
-	context = {'nome' : 'Diego'}
+	form = SignUpViajante(request.POST or None)
+	context = {
+		'form': form,
+	}
+	
+	if form.is_valid():
+		instance = form.save(commit=False)
+		instance.save()
 	return render(request, "home.html", context)
 
 
 def form(request):
-	print (request)
-	return render(request, "form.html", {})
+	form = SignUpViajante(request.POST or None)
+	context = {
+		'form': form,
+	}
+	return render(request, "form.html", context)

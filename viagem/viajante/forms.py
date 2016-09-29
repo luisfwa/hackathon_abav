@@ -10,7 +10,7 @@ class SignUpCidade(forms.ModelForm):
 class SignUpViajante(forms.ModelForm):
 	class Meta:
 		model = Viajante
-		fields = ["nome", "email", "senha", "idade", "dinheiro", "tema"]
+		fields = ["nome", "email", "senha", "telefone"]
 
 
 class SignUpTema(forms.ModelForm):
