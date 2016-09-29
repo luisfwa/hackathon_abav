@@ -16,20 +16,13 @@ def form(request):
 
 
 def dash(request):
-	form = SignUpViajante(request.POST or None)
+	
 	form2 = LoginViajante(request.POST or None)
 	context = {
-		'form': form,
 		'form2': form2,
 	}
 
 	
-
-	
-	if form.is_valid():
-		instance = form.save(commit=False)
-		instance.save()
-		return render(request, "index.html", context)
 
 	if form2.is_valid():
 		instance = form2.save(commit=False)
@@ -45,8 +38,18 @@ def dash(request):
 
 	
 
-def charts(request):
-	return render(request, "base_ui_cards.html", {})
+def primeiros_passos(request):
+
+	form = SignUpViajante(request.POST or None)
+	
+	if form.is_valid():
+		instance = form.save(commit=False)
+		instance.save()
+		context = {
+			'viajante': list(Viajante.objects.all().filter(email=instance.email))[0],
+		}
+		return render(request, "primeiros_passos.html", context)
+	return render(request, "form.html", {})
 
 def modals(request):
 	return render(request, "base_ui_modals_tooltips.html", {});

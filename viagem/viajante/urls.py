@@ -9,7 +9,7 @@ urlpatterns = [
 	url(r'^$', views.home),
 	url(r'^form/', views.form),
 	url(r'^dash/home', views.dash),
-	url(r'^dash/charts', views.charts),
+	url(r'^dash/primeiros_passos', views.primeiros_passos),
 	url(r'^dash/modals', views.modals),
 ]
 
