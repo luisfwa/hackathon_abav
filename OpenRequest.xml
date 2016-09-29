@@ -1,0 +1,45 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://schemas.xmlsoap.org/ws/2002/12/secext" xmlns:mes="http://www.ebxml.org/namespaces/messageHeader" xmlns:ns="http://www.opentravel.org/OTA/2002/11">
+  <soapenv:Header>
+    <sec:Security>
+      <sec:UsernameToken>
+        <sec:Username>973743</sec:Username>
+        <sec:Password>WS680958</sec:Password>
+        <sec:NewPassword></sec:NewPassword>
+        <Organization>G7RE</Organization>
+        <Domain>DEFAULT</Domain>
+      </sec:UsernameToken>
+      <sec:SabreAth></sec:SabreAth>
+      <sec:BinarySecurityToken></sec:BinarySecurityToken>
+    </sec:Security>
+    <mes:MessageHeader mes:id="?" mes:version="?">
+      <mes:From>
+        <mes:PartyId mes:type="?">partyFrom</mes:PartyId>
+        <mes:Role>roleFrom</mes:Role>
+      </mes:From>
+      <mes:To>
+        <mes:PartyId mes:type="?">partyTo</mes:PartyId>
+        <mes:Role>roleTo</mes:Role>
+      </mes:To>
+      <mes:CPAId>CPAId</mes:CPAId>
+      <mes:ConversationId> </mes:ConversationId>
+      <mes:Service mes:type="?">?</mes:Service>
+      <mes:Action>SessionCreateRQ</mes:Action>
+      <mes:MessageData>
+        <mes:MessageId>ID</mes:MessageId>
+        <mes:Timestamp>2014-04-01</mes:Timestamp>
+        <mes:RefToMessageId></mes:RefToMessageId>
+        <mes:TimeToLive></mes:TimeToLive>
+        <mes:Timeout>30000</mes:Timeout>
+      </mes:MessageData>
+      <mes:DuplicateElimination></mes:DuplicateElimination>
+      <mes:Description xml:lang="?"></mes:Description>
+    </mes:MessageHeader>
+  </soapenv:Header>
+  <soapenv:Body>
+    <ns:SessionCreateRQ returnContextID="true">
+      <ns:POS>
+        <ns:Source PseudoCityCode=""/>
+      </ns:POS>
+    </ns:SessionCreateRQ>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,866 @@
+﻿<HotelSOAP>
+  <SessionCreateRQ-RS>
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://schemas.xmlsoap.org/ws/2002/12/secext" xmlns:mes="http://www.ebxml.org/namespaces/messageHeader" xmlns:ns="http://www.opentravel.org/OTA/2002/11">
+      <soapenv:Header>
+        <sec:Security>
+          <sec:UsernameToken>
+            <sec:Username>973743</sec:Username>
+            <sec:Password>WS680958</sec:Password>
+            <sec:NewPassword></sec:NewPassword>
+            <Organization>G7RE</Organization>
+            <Domain>DEFAULT</Domain>
+          </sec:UsernameToken>
+          <sec:SabreAth></sec:SabreAth>
+          <sec:BinarySecurityToken></sec:BinarySecurityToken>
+        </sec:Security>
+        <mes:MessageHeader mes:id="?" mes:version="?">
+          <mes:From>
+            <mes:PartyId mes:type="?">partyFrom</mes:PartyId>
+            <mes:Role>roleFrom</mes:Role>
+          </mes:From>
+          <mes:To>
+            <mes:PartyId mes:type="?">partyTo</mes:PartyId>
+            <mes:Role>roleTo</mes:Role>
+          </mes:To>
+          <mes:CPAId>CPAId</mes:CPAId>
+          <mes:ConversationId> </mes:ConversationId>
+          <mes:Service mes:type="?">?</mes:Service>
+          <mes:Action>SessionCreateRQ</mes:Action>
+          <mes:MessageData>
+            <mes:MessageId>ID</mes:MessageId>
+            <mes:Timestamp>2014-04-01</mes:Timestamp>
+            <mes:RefToMessageId></mes:RefToMessageId>
+            <mes:TimeToLive></mes:TimeToLive>
+            <mes:Timeout>30000</mes:Timeout>
+          </mes:MessageData>
+          <mes:DuplicateElimination></mes:DuplicateElimination>
+          <mes:Description xml:lang="?"></mes:Description>
+        </mes:MessageHeader>
+      </soapenv:Header>
+      <soapenv:Body>
+        <ns:SessionCreateRQ returnContextID="true">
+          <ns:POS>
+            <ns:Source PseudoCityCode=""/>
+          </ns:POS>
+        </ns:SessionCreateRQ>
+      </soapenv:Body>
+    </soapenv:Envelope>
+    <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap-env:Header>
+        <eb:MessageHeader eb:version="1.0" soap-env:mustUnderstand="1" xmlns:eb="http://www.ebxml.org/namespaces/messageHeader">
+          <eb:From>
+            <eb:PartyId eb:type="?">partyTo</eb:PartyId>
+          </eb:From>
+          <eb:To>
+            <eb:PartyId eb:type="?">partyFrom</eb:PartyId>
+          </eb:To>
+          <eb:CPAId>CPAId</eb:CPAId>
+          <eb:ConversationId></eb:ConversationId>
+          <eb:Service eb:type="sabreXML">Session</eb:Service>
+          <eb:Action>SessionCreateRS</eb:Action>
+          <eb:MessageData>
+            <eb:MessageId>1617908194267220610</eb:MessageId>
+            <eb:Timestamp>2016-09-29T05:23:46</eb:Timestamp>
+            <eb:RefToMessageId>ID</eb:RefToMessageId>
+          </eb:MessageData>
+        </eb:MessageHeader>
+        <wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/12/secext">
+          <wsse:BinarySecurityToken valueType="String" EncodingType="wsse:Base64Binary">Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTC!ICESMSLB\/CRT.LB!-3356607285526290303!1028914!0!1</wsse:BinarySecurityToken>
+        </wsse:Security>
+      </soap-env:Header>
+      <soap-env:Body>
+        <SessionCreateRS version="1" status="Approved" xmlns="http://www.opentravel.org/OTA/2002/11">
+          <ConversationId></ConversationId>
+        </SessionCreateRS>
+      </soap-env:Body>
+    </soap-env:Envelope>
+  </SessionCreateRQ-RS>
+  <OTA_HotelAvailLLSRQ-RS>
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://schemas.xmlsoap.org/ws/2002/12/secext" xmlns:mes="http://www.ebxml.org/namespaces/messageHeader" xmlns:v3="http://services.sabre.com/sp/pd/v3_2">
+      <soapenv:Header>
+        <sec:Security>
+          <sec:UsernameToken>
+            <sec:Username/>
+            <sec:Password/>
+            <sec:NewPassword/>
+            <Organization/>
+            <Domain/>
+          </sec:UsernameToken>
+          <sec:SabreAth/>
+          <sec:BinarySecurityToken>${#Project#BinarySecurityToken}</sec:BinarySecurityToken>
+        </sec:Security>
+        <mes:MessageHeader mes:id="" mes:version="">
+          <mes:From>
+            <mes:PartyId mes:type=""/>
+            <mes:Role/>
+          </mes:From>
+          <mes:To>
+            <mes:PartyId mes:type=""/>
+            <mes:Role/>
+          </mes:To>
+          <mes:CPAId/>
+          <mes:ConversationId>OTA_HotelAvailLLSRQ</mes:ConversationId>
+          <mes:Service mes:type=""/>
+          <mes:Action>OTA_HotelAvailLLSRQ</mes:Action>
+          <mes:MessageData>
+            <mes:MessageId/>
+            <mes:Timestamp/>
+            <mes:RefToMessageId/>
+            <mes:TimeToLive/>
+            <mes:Timeout>60</mes:Timeout>
+          </mes:MessageData>
+          <mes:DuplicateElimination/>
+          <mes:Description xml:lang=""/>
+        </mes:MessageHeader>
+      </soapenv:Header>
+      <soapenv:Body>
+        <OTA_HotelAvailRQ Version="2.2.1" ReturnHostCommand="true" xmlns="http://webservices.sabre.com/sabreXML/2011/10">
+          <AvailRequestSegment>
+            <!--<Customer>
+               <Corporate>
+                  <ID>ABC123</ID>
+               </Corporate>
+            </Customer>
+-->
+            <GuestCounts Count="2"/>
+            <HotelSearchCriteria>
+              <Criterion>
+                <HotelRef HotelCityCode="MIA"/>
+              </Criterion>
+            </HotelSearchCriteria>
+            <TimeSpan End="11-24" Start="11-22"/>
+          </AvailRequestSegment>
+        </OTA_HotelAvailRQ>
+      </soapenv:Body>
+    </soapenv:Envelope>
+    <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap-env:Header>
+        <eb:MessageHeader eb:version="1.0" soap-env:mustUnderstand="1" xmlns:eb="http://www.ebxml.org/namespaces/messageHeader">
+          <eb:From>
+            <eb:PartyId eb:type=""/>
+          </eb:From>
+          <eb:To>
+            <eb:PartyId eb:type=""/>
+          </eb:To>
+          <eb:ConversationId>OTA_HotelAvailLLSRQ</eb:ConversationId>
+          <eb:Service eb:type=""/>
+          <eb:Action>OTA_HotelAvailLLSRS</eb:Action>
+          <eb:MessageData>
+            <eb:MessageId>1672069200337161760</eb:MessageId>
+            <eb:Timestamp>2016-09-29T05:34:20</eb:Timestamp>
+          </eb:MessageData>
+        </eb:MessageHeader>
+        <wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/12/secext">
+          <wsse:BinarySecurityToken valueType="String" EncodingType="wsse:Base64Binary">Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTC!ICESMSLB\/CRT.LB!-3356607285526290303!1028914!0!2</wsse:BinarySecurityToken>
+        </wsse:Security>
+      </soap-env:Header>
+      <soap-env:Body>
+        <OTA_HotelAvailRS Version="2.2.1" xmlns="http://webservices.sabre.com/sabreXML/2011/10" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stl="http://services.sabre.com/STL/v01">
+          <stl:ApplicationResults status="Complete">
+            <stl:Success timeStamp="2016-09-29T00:34:20-05:00">
+              <stl:SystemSpecificResults>
+                <stl:HostCommand LNIATA="75AF83">HOTMIA/22NOV-24NOV2</stl:HostCommand>
+              </stl:SystemSpecificResults>
+            </stl:Success>
+          </stl:ApplicationResults>
+          <AdditionalAvail Ind="true"/>
+          <AvailabilityOptions>
+            <AvailabilityOption RPH="001">
+              <BasicPropertyInfo AreaID="009E" ChainCode="CY" Distance="K" GEO_ConfidenceLevel="1" HotelCityCode="MIA" HotelCode="0063208" HotelName="COURTYARD MIAMI DOWNTOWN" Latitude="25.772480" Longitude="-80.190170">
+                <Address>
+                  <AddressLine>200 SE 2ND AVE</AddressLine>
+                  <AddressLine>MIAMI FL 33131</AddressLine>
+                </Address>
+                <ContactNumbers>
+                  <ContactNumber Fax="1-305-358-4061" Phone="1-305-374-3000"/>
+                </ContactNumbers>
+                <DirectConnect>
+                  <Alt_Avail Ind="false"/>
+                  <DC_AvailParticipant Ind="true"/>
+                  <DC_SellParticipant Ind="true"/>
+                  <RatesExceedMax Ind="false"/>
+                  <UnAvail Ind="false"/>
+                </DirectConnect>
+                <LocationDescription Code="G">
+                  <Text>MIAMI</Text>
+                </LocationDescription>
+                <Property Rating="NTM">
+                  <Text>3 CROWN</Text>
+                </Property>
+                <PropertyOptionInfo>
+                  <ADA_Accessible Ind="false"/>
+                  <AdultsOnly Ind="false"/>
+                  <BeachFront Ind="false"/>
+                  <Breakfast Ind="false"/>
+                  <BusinessCenter Ind="false"/>
+                  <BusinessReady Ind="false"/>
+                  <Conventions Ind="false"/>
+                  <Dataport Ind="true"/>
+                  <Dining Ind="true"/>
+                  <DryClean Ind="true"/>
+                  <EcoCertified Ind="false"/>
+                  <ExecutiveFloors Ind="false"/>
+                  <FitnessCenter Ind="true"/>
+                  <FreeLocalCalls Ind="false"/>
+                  <FreeParking Ind="false"/>
+                  <FreeShuttle Ind="false"/>
+                  <FreeWifiInMeetingRooms Ind="false"/>
+                  <FreeWifiInPublicSpaces Ind="false"/>
+                  <FreeWifiInRooms Ind="false"/>
+                  <FullServiceSpa Ind="false"/>
+                  <GameFacilities Ind="false"/>
+                  <Golf Ind="false"/>
+                  <HighSpeedInternet Ind="true"/>
+                  <HypoallergenicRooms Ind="false"/>
+                  <IndoorPool Ind="false"/>
+                  <InRoomCoffeeTea Ind="false"/>
+                  <InRoomMiniBar Ind="false"/>
+                  <InRoomRefrigerator Ind="false"/>
+                  <InRoomSafe Ind="false"/>
+                  <InteriorDoorways Ind="false"/>
+                  <Jacuzzi Ind="false"/>
+                  <KidsFacilities Ind="false"/>
+                  <KitchenFacilities Ind="false"/>
+                  <MealService Ind="false"/>
+                  <MeetingFacilities Ind="true"/>
+                  <NoAdultTV Ind="false"/>
+                  <NonSmoking Ind="true"/>
+                  <OutdoorPool Ind="true"/>
+                  <Pets Ind="false"/>
+                  <Pool Ind="true"/>
+                  <PublicTransportationAdjacent Ind="false"/>
+                  <RateAssured Ind="true"/>
+                  <Recreation Ind="false"/>
+                  <RestrictedRoomAccess Ind="false"/>
+                  <RoomService Ind="false"/>
+                  <RoomService24Hours Ind="false"/>
+                  <RoomsWithBalcony Ind="false"/>
+                  <SkiInOutProperty Ind="false"/>
+                  <SmokeFree Ind="false"/>
+                  <SmokingRoomsAvail Ind="false"/>
+                  <Tennis Ind="false"/>
+                  <WaterPurificationSystem Ind="false"/>
+                  <Wheelchair Ind="true"/>
+                </PropertyOptionInfo>
+                <RateRange CurrencyCode="BRL" Max="662.51" Min="464.40"/>
+                <RoomRate RateLevelCode="RAC">
+                  <AdditionalInfo>
+                    <CancelPolicy Numeric="00"/>
+                  </AdditionalInfo>
+                  <HotelRateCode>RAC</HotelRateCode>
+                </RoomRate>
+                <SpecialOffers Ind="false"/>
+              </BasicPropertyInfo>
+            </AvailabilityOption>
+            <AvailabilityOption RPH="002">
+              <BasicPropertyInfo AreaID="032N" ChainCode="RC" Distance="K" GEO_ConfidenceLevel="1" HotelCityCode="MIA" HotelCode="0064349" HotelName="RESIDENCE INN MIA AVENTURA MALL" Latitude="25.960090" Longitude="-80.139580">
+                <Address>
+                  <AddressLine>19900 WEST COUNTRY CLUB DRIVE</AddressLine>
+                  <AddressLine>AVENTURA FL 33180</AddressLine>
+                </Address>
+                <ContactNumbers>
+                  <ContactNumber Fax="786-528-1002" Phone="786-528-1001"/>
+                </ContactNumbers>
+                <DirectConnect>
+                  <Alt_Avail Ind="false"/>
+                  <DC_AvailParticipant Ind="true"/>
+                  <DC_SellParticipant Ind="true"/>
+                  <RatesExceedMax Ind="false"/>
+                  <UnAvail Ind="false"/>
+                </DirectConnect>
+                <LocationDescription Code="C">
+                  <Text>AVENTURA</Text>
+                </LocationDescription>
+                <Property Rating="NTM">
+                  <Text>3 CROWN</Text>
+                </Property>
+                <PropertyOptionInfo>
+                  <ADA_Accessible Ind="false"/>
+                  <AdultsOnly Ind="false"/>
+                  <BeachFront Ind="false"/>
+                  <Breakfast Ind="true"/>
+                  <BusinessCenter Ind="false"/>
+                  <BusinessReady Ind="false"/>
+                  <Conventions Ind="false"/>
+                  <Dataport Ind="true"/>
+                  <Dining Ind="false"/>
+                  <DryClean Ind="true"/>
+                  <EcoCertified Ind="false"/>
+                  <ExecutiveFloors Ind="false"/>
+                  <FitnessCenter Ind="true"/>
+                  <FreeLocalCalls Ind="false"/>
+                  <FreeParking Ind="true"/>
+                  <FreeShuttle Ind="false"/>
+                  <FreeWifiInMeetingRooms Ind="false"/>
+                  <FreeWifiInPublicSpaces Ind="false"/>
+                  <FreeWifiInRooms Ind="false"/>
+                  <FullServiceSpa Ind="false"/>
+                  <GameFacilities Ind="false"/>
+                  <Golf Ind="false"/>
+                  <HighSpeedInternet Ind="true"/>
+                  <HypoallergenicRooms Ind="false"/>
+                  <IndoorPool Ind="false"/>
+                  <InRoomCoffeeTea Ind="false"/>
+                  <InRoomMiniBar Ind="false"/>
+                  <InRoomRefrigerator Ind="false"/>
+                  <InRoomSafe Ind="false"/>
+                  <InteriorDoorways Ind="false"/>
+                  <Jacuzzi Ind="false"/>
+                  <KidsFacilities Ind="false"/>
+                  <KitchenFacilities Ind="false"/>
+                  <MealService Ind="false"/>
+                  <MeetingFacilities Ind="true"/>
+                  <NoAdultTV Ind="false"/>
+                  <NonSmoking Ind="true"/>
+                  <OutdoorPool Ind="true"/>
+                  <Pets Ind="true"/>
+                  <Pool Ind="true"/>
+                  <PublicTransportationAdjacent Ind="false"/>
+                  <RateAssured Ind="true"/>
+                  <Recreation Ind="false"/>
+                  <RestrictedRoomAccess Ind="false"/>
+                  <RoomService Ind="false"/>
+                  <RoomService24Hours Ind="false"/>
+                  <RoomsWithBalcony Ind="false"/>
+                  <SkiInOutProperty Ind="false"/>
+                  <SmokeFree Ind="false"/>
+                  <SmokingRoomsAvail Ind="false"/>
+                  <Tennis Ind="false"/>
+                  <WaterPurificationSystem Ind="false"/>
+                  <Wheelchair Ind="true"/>
+                </PropertyOptionInfo>
+                <RateRange CurrencyCode="BRL" Max="1266.56" Min="551.96"/>
+                <RoomRate RateLevelCode="RAC">
+                  <AdditionalInfo>
+                    <CancelPolicy Numeric="00"/>
+                  </AdditionalInfo>
+                  <HotelRateCode>RAC</HotelRateCode>
+                </RoomRate>
+                <SpecialOffers Ind="false"/>
+              </BasicPropertyInfo>
+            </AvailabilityOption>
+            <AvailabilityOption RPH="003">
+              <BasicPropertyInfo AreaID="016E" ChainCode="UI" Distance="K" GEO_ConfidenceLevel="1" HotelCityCode="MIA" HotelCode="0001070" HotelName="CONTINENTAL SOUTH BEACH" Latitude="25.794530" Longitude="-80.129420">
+                <Address>
+                  <AddressLine>1825 COLLINS AVENUE</AddressLine>
+                  <AddressLine>MIAMI BEACH FL 33139</AddressLine>
+                </Address>
+                <ContactNumbers>
+                  <ContactNumber Fax="305-531-5602" Phone="305-531-3503"/>
+                </ContactNumbers>
+                <DirectConnect>
+                  <Alt_Avail Ind="false"/>
+                  <DC_AvailParticipant Ind="true"/>
+                  <DC_SellParticipant Ind="true"/>
+                  <RatesExceedMax Ind="false"/>
+                  <UnAvail Ind="false"/>
+                </DirectConnect>
+                <LocationDescription Code="G">
+                  <Text>MIAMI BEACH FLORIDA</Text>
+                </LocationDescription>
+                <Property Rating="NTM">
+                  <Text>1 CROWN</Text>
+                </Property>
+                <PropertyOptionInfo>
+                  <ADA_Accessible Ind="false"/>
+                  <AdultsOnly Ind="false"/>
+                  <BeachFront Ind="false"/>
+                  <Breakfast Ind="false"/>
+                  <BusinessCenter Ind="true"/>
+                  <BusinessReady Ind="false"/>
+                  <Conventions Ind="true"/>
+                  <Dataport Ind="true"/>
+                  <Dining Ind="true"/>
+                  <DryClean Ind="true"/>
+                  <EcoCertified Ind="false"/>
+                  <ExecutiveFloors Ind="false"/>
+                  <FitnessCenter Ind="true"/>
+                  <FreeLocalCalls Ind="true"/>
+                  <FreeParking Ind="false"/>
+                  <FreeShuttle Ind="false"/>
+                  <FreeWifiInMeetingRooms Ind="false"/>
+                  <FreeWifiInPublicSpaces Ind="false"/>
+                  <FreeWifiInRooms Ind="false"/>
+                  <FullServiceSpa Ind="false"/>
+                  <GameFacilities Ind="false"/>
+                  <Golf Ind="true"/>
+                  <HighSpeedInternet Ind="true"/>
+                  <HypoallergenicRooms Ind="false"/>
+                  <IndoorPool Ind="false"/>
+                  <InRoomCoffeeTea Ind="false"/>
+                  <InRoomMiniBar Ind="false"/>
+                  <InRoomRefrigerator Ind="false"/>
+                  <InRoomSafe Ind="false"/>
+                  <InteriorDoorways Ind="false"/>
+                  <Jacuzzi Ind="false"/>
+                  <KidsFacilities Ind="false"/>
+                  <KitchenFacilities Ind="false"/>
+                  <MealService Ind="false"/>
+                  <MeetingFacilities Ind="true"/>
+                  <NoAdultTV Ind="false"/>
+                  <NonSmoking Ind="false"/>
+                  <OutdoorPool Ind="true"/>
+                  <Pets Ind="false"/>
+                  <Pool Ind="true"/>
+                  <PublicTransportationAdjacent Ind="false"/>
+                  <RateAssured Ind="true"/>
+                  <Recreation Ind="false"/>
+                  <RestrictedRoomAccess Ind="false"/>
+                  <RoomService Ind="true"/>
+                  <RoomService24Hours Ind="false"/>
+                  <RoomsWithBalcony Ind="false"/>
+                  <SkiInOutProperty Ind="false"/>
+                  <SmokeFree Ind="false"/>
+                  <SmokingRoomsAvail Ind="false"/>
+                  <Tennis Ind="true"/>
+                  <WaterPurificationSystem Ind="false"/>
+                  <Wheelchair Ind="true"/>
+                </PropertyOptionInfo>
+                <RoomRate RateLevelCode="RAC">
+                  <AdditionalInfo>
+                    <CancelPolicy Numeric="00"/>
+                  </AdditionalInfo>
+                  <HotelRateCode>RAC</HotelRateCode>
+                </RoomRate>
+                <SpecialOffers Ind="false"/>
+              </BasicPropertyInfo>
+            </AvailabilityOption>
+            <AvailabilityOption RPH="004">
+              <BasicPropertyInfo AreaID="016E" ChainCode="WH" Distance="K" GEO_ConfidenceLevel="1" HotelCityCode="MIA" HotelCode="0103435" HotelName="W SOUTH BEACH" Latitude="25.797960" Longitude="-80.128170">
+                <Address>
+                  <AddressLine>2201 COLLINS AVE</AddressLine>
+                  <AddressLine>MIAMI BEACH FL 33139</AddressLine>
+                </Address>
+                <ContactNumbers>
+                  <ContactNumber Fax="1-305-938-3005" Phone="1-305-938-3000"/>
+                </ContactNumbers>
+                <DirectConnect>
+                  <Alt_Avail Ind="false"/>
+                  <DC_AvailParticipant Ind="true"/>
+                  <DC_SellParticipant Ind="true"/>
+                  <RatesExceedMax Ind="false"/>
+                  <UnAvail Ind="false"/>
+                </DirectConnect>
+                <LocationDescription Code="G">
+                  <Text>OCEANFRONT</Text>
+                </LocationDescription>
+                <PropertyOptionInfo>
+                  <ADA_Accessible Ind="false"/>
+                  <AdultsOnly Ind="false"/>
+                  <BeachFront Ind="false"/>
+                  <Breakfast Ind="false"/>
+                  <BusinessCenter Ind="true"/>
+                  <BusinessReady Ind="false"/>
+                  <Conventions Ind="false"/>
+                  <Dataport Ind="true"/>
+                  <Dining Ind="true"/>
+                  <DryClean Ind="true"/>
+                  <EcoCertified Ind="false"/>
+                  <ExecutiveFloors Ind="false"/>
+                  <FitnessCenter Ind="true"/>
+                  <FreeLocalCalls Ind="false"/>
+                  <FreeParking Ind="false"/>
+                  <FreeShuttle Ind="false"/>
+                  <FreeWifiInMeetingRooms Ind="false"/>
+                  <FreeWifiInPublicSpaces Ind="false"/>
+                  <FreeWifiInRooms Ind="false"/>
+                  <FullServiceSpa Ind="false"/>
+                  <GameFacilities Ind="false"/>
+                  <Golf Ind="true"/>
+                  <HighSpeedInternet Ind="true"/>
+                  <HypoallergenicRooms Ind="false"/>
+                  <IndoorPool Ind="false"/>
+                  <InRoomCoffeeTea Ind="false"/>
+                  <InRoomMiniBar Ind="false"/>
+                  <InRoomRefrigerator Ind="false"/>
+                  <InRoomSafe Ind="false"/>
+                  <InteriorDoorways Ind="false"/>
+                  <Jacuzzi Ind="false"/>
+                  <KidsFacilities Ind="false"/>
+                  <KitchenFacilities Ind="false"/>
+                  <MealService Ind="false"/>
+                  <MeetingFacilities Ind="true"/>
+                  <NoAdultTV Ind="false"/>
+                  <NonSmoking Ind="true"/>
+                  <OutdoorPool Ind="true"/>
+                  <Pets Ind="true"/>
+                  <Pool Ind="true"/>
+                  <PublicTransportationAdjacent Ind="false"/>
+                  <RateAssured Ind="true"/>
+                  <Recreation Ind="false"/>
+                  <RestrictedRoomAccess Ind="false"/>
+                  <RoomService Ind="true"/>
+                  <RoomService24Hours Ind="false"/>
+                  <RoomsWithBalcony Ind="false"/>
+                  <SkiInOutProperty Ind="false"/>
+                  <SmokeFree Ind="false"/>
+                  <SmokingRoomsAvail Ind="false"/>
+                  <Tennis Ind="true"/>
+                  <WaterPurificationSystem Ind="false"/>
+                  <Wheelchair Ind="true"/>
+                </PropertyOptionInfo>
+                <RoomRate RateLevelCode="RAC">
+                  <AdditionalInfo>
+                    <CancelPolicy Numeric="00"/>
+                  </AdditionalInfo>
+                  <HotelRateCode>RAC</HotelRateCode>
+                </RoomRate>
+                <SpecialOffers Ind="false"/>
+              </BasicPropertyInfo>
+            </AvailabilityOption>
+            <AvailabilityOption RPH="005">
+              <BasicPropertyInfo AreaID="017SE" ChainCode="RZ" Distance="K" GEO_ConfidenceLevel="1" HotelCityCode="MIA" HotelCode="0050784" HotelName="RITZ CARLTON KEY BISCAYNE" Latitude="25.692321" Longitude="-80.159819">
+                <Address>
+                  <AddressLine>455 GRAND BAY DRIVE</AddressLine>
+                  <AddressLine>KEY BISCAYNE FL 33149</AddressLine>
+                </Address>
+                <ContactNumbers>
+                  <ContactNumber Fax="305-365-4505" Phone="305-365-4500"/>
+                </ContactNumbers>
+                <DirectConnect>
+                  <Alt_Avail Ind="false"/>
+                  <DC_AvailParticipant Ind="true"/>
+                  <DC_SellParticipant Ind="true"/>
+                  <RatesExceedMax Ind="false"/>
+                  <UnAvail Ind="false"/>
+                </DirectConnect>
+                <LocationDescription Code="G">
+                  <Text>KEY BISCAYNE</Text>
+                </LocationDescription>
+                <Property Rating="NTM">
+                  <Text>5 CROWN</Text>
+                </Property>
+                <PropertyOptionInfo>
+                  <ADA_Accessible Ind="false"/>
+                  <AdultsOnly Ind="false"/>
+                  <BeachFront Ind="true"/>
+                  <Breakfast Ind="false"/>
+                  <BusinessCenter Ind="true"/>
+                  <BusinessReady Ind="false"/>
+                  <Conventions Ind="true"/>
+                  <Dataport Ind="true"/>
+                  <Dining Ind="true"/>
+                  <DryClean Ind="true"/>
+                  <EcoCertified Ind="true"/>
+                  <ExecutiveFloors Ind="true"/>
+                  <FitnessCenter Ind="true"/>
+                  <FreeLocalCalls Ind="false"/>
+                  <FreeParking Ind="false"/>
+                  <FreeShuttle Ind="false"/>
+                  <FreeWifiInMeetingRooms Ind="false"/>
+                  <FreeWifiInPublicSpaces Ind="false"/>
+                  <FreeWifiInRooms Ind="false"/>
+                  <FullServiceSpa Ind="false"/>
+                  <GameFacilities Ind="false"/>
+                  <Golf Ind="false"/>
+                  <HighSpeedInternet Ind="true"/>
+                  <HypoallergenicRooms Ind="false"/>
+                  <IndoorPool Ind="false"/>
+                  <InRoomCoffeeTea Ind="false"/>
+                  <InRoomMiniBar Ind="false"/>
+                  <InRoomRefrigerator Ind="false"/>
+                  <InRoomSafe Ind="false"/>
+                  <InteriorDoorways Ind="false"/>
+                  <Jacuzzi Ind="false"/>
+                  <KidsFacilities Ind="true"/>
+                  <KitchenFacilities Ind="false"/>
+                  <MealService Ind="false"/>
+                  <MeetingFacilities Ind="true"/>
+                  <NoAdultTV Ind="false"/>
+                  <NonSmoking Ind="true"/>
+                  <OutdoorPool Ind="true"/>
+                  <Pets Ind="false"/>
+                  <Pool Ind="true"/>
+                  <PublicTransportationAdjacent Ind="false"/>
+                  <RateAssured Ind="true"/>
+                  <Recreation Ind="false"/>
+                  <RestrictedRoomAccess Ind="false"/>
+                  <RoomService Ind="true"/>
+                  <RoomService24Hours Ind="false"/>
+                  <RoomsWithBalcony Ind="false"/>
+                  <SkiInOutProperty Ind="false"/>
+                  <SmokeFree Ind="false"/>
+                  <SmokingRoomsAvail Ind="false"/>
+                  <Tennis Ind="true"/>
+                  <WaterPurificationSystem Ind="false"/>
+                  <Wheelchair Ind="true"/>
+                </PropertyOptionInfo>
+                <RateRange CurrencyCode="BRL" Max="11071.06" Min="1165.88"/>
+                <RoomRate RateLevelCode="RAC">
+                  <AdditionalInfo>
+                    <CancelPolicy Numeric="00"/>
+                  </AdditionalInfo>
+                  <HotelRateCode>RAC</HotelRateCode>
+                </RoomRate>
+                <SpecialOffers Ind="false"/>
+              </BasicPropertyInfo>
+            </AvailabilityOption>
+            <AvailabilityOption RPH="006">
+              <BasicPropertyInfo AreaID="008SE" ChainCode="RZ" Distance="K" GEO_ConfidenceLevel="1" HotelCityCode="MIA" HotelCode="0056687" HotelName="RITZ CARLTON MIA COCONUT GROVE" Latitude="25.730524" Longitude="-80.237477">
+                <Address>
+                  <AddressLine>3300 SW 27TH AVE.</AddressLine>
+                  <AddressLine>COCONUT GROVE FL 33133</AddressLine>
+                </Address>
+                <ContactNumbers>
+                  <ContactNumber Fax="305-644-4681" Phone="305-644-4680"/>
+                </ContactNumbers>
+                <DirectConnect>
+                  <Alt_Avail Ind="false"/>
+                  <DC_AvailParticipant Ind="true"/>
+                  <DC_SellParticipant Ind="true"/>
+                  <RatesExceedMax Ind="false"/>
+                  <UnAvail Ind="false"/>
+                </DirectConnect>
+                <LocationDescription Code="G">
+                  <Text>COCONUT GROVE</Text>
+                </LocationDescription>
+                <Property Rating="NTM">
+                  <Text>4 CROWN</Text>
+                </Property>
+                <PropertyOptionInfo>
+                  <ADA_Accessible Ind="false"/>
+                  <AdultsOnly Ind="false"/>
+                  <BeachFront Ind="false"/>
+                  <Breakfast Ind="false"/>
+                  <BusinessCenter Ind="true"/>
+                  <BusinessReady Ind="false"/>
+                  <Conventions Ind="true"/>
+                  <Dataport Ind="true"/>
+                  <Dining Ind="true"/>
+                  <DryClean Ind="true"/>
+                  <EcoCertified Ind="true"/>
+                  <ExecutiveFloors Ind="true"/>
+                  <FitnessCenter Ind="true"/>
+                  <FreeLocalCalls Ind="false"/>
+                  <FreeParking Ind="false"/>
+                  <FreeShuttle Ind="false"/>
+                  <FreeWifiInMeetingRooms Ind="false"/>
+                  <FreeWifiInPublicSpaces Ind="false"/>
+                  <FreeWifiInRooms Ind="false"/>
+                  <FullServiceSpa Ind="false"/>
+                  <GameFacilities Ind="false"/>
+                  <Golf Ind="false"/>
+                  <HighSpeedInternet Ind="true"/>
+                  <HypoallergenicRooms Ind="false"/>
+                  <IndoorPool Ind="false"/>
+                  <InRoomCoffeeTea Ind="false"/>
+                  <InRoomMiniBar Ind="false"/>
+                  <InRoomRefrigerator Ind="false"/>
+                  <InRoomSafe Ind="false"/>
+                  <InteriorDoorways Ind="false"/>
+                  <Jacuzzi Ind="false"/>
+                  <KidsFacilities Ind="false"/>
+                  <KitchenFacilities Ind="false"/>
+                  <MealService Ind="false"/>
+                  <MeetingFacilities Ind="true"/>
+                  <NoAdultTV Ind="false"/>
+                  <NonSmoking Ind="true"/>
+                  <OutdoorPool Ind="true"/>
+                  <Pets Ind="false"/>
+                  <Pool Ind="true"/>
+                  <PublicTransportationAdjacent Ind="false"/>
+                  <RateAssured Ind="true"/>
+                  <Recreation Ind="false"/>
+                  <RestrictedRoomAccess Ind="false"/>
+                  <RoomService Ind="true"/>
+                  <RoomService24Hours Ind="false"/>
+                  <RoomsWithBalcony Ind="false"/>
+                  <SkiInOutProperty Ind="false"/>
+                  <SmokeFree Ind="false"/>
+                  <SmokingRoomsAvail Ind="false"/>
+                  <Tennis Ind="false"/>
+                  <WaterPurificationSystem Ind="false"/>
+                  <Wheelchair Ind="true"/>
+                </PropertyOptionInfo>
+                <RateRange CurrencyCode="BRL" Max="8115.75" Min="711.22"/>
+                <RoomRate RateLevelCode="RAC">
+                  <AdditionalInfo>
+                    <CancelPolicy Numeric="00"/>
+                  </AdditionalInfo>
+                  <HotelRateCode>RAC</HotelRateCode>
+                </RoomRate>
+                <SpecialOffers Ind="false"/>
+              </BasicPropertyInfo>
+            </AvailabilityOption>
+            <AvailabilityOption RPH="007">
+              <BasicPropertyInfo AreaID="001NE" ChainCode="DI" Distance="K" GEO_ConfidenceLevel="1" HotelCityCode="MIA" HotelCode="0035673" HotelName="DAYS INN MIAMI AIRPORT NORTH" Latitude="25.808169" Longitude="-80.274947">
+                <Address>
+                  <AddressLine>4767 N.W. 36TH ST.</AddressLine>
+                  <AddressLine>MIAMI FL 33166</AddressLine>
+                </Address>
+                <ContactNumbers>
+                  <ContactNumber Fax="1-305-8871194" Phone="1-305-8883661"/>
+                </ContactNumbers>
+                <DirectConnect>
+                  <Alt_Avail Ind="false"/>
+                  <DC_AvailParticipant Ind="true"/>
+                  <DC_SellParticipant Ind="true"/>
+                  <RatesExceedMax Ind="false"/>
+                  <UnAvail Ind="false"/>
+                </DirectConnect>
+                <LocationDescription Code="G">
+                  <Text>MIAMI</Text>
+                </LocationDescription>
+                <Property Rating="NTM">
+                  <Text>2 CROWN</Text>
+                </Property>
+                <PropertyOptionInfo>
+                  <ADA_Accessible Ind="false"/>
+                  <AdultsOnly Ind="false"/>
+                  <BeachFront Ind="false"/>
+                  <Breakfast Ind="false"/>
+                  <BusinessCenter Ind="false"/>
+                  <BusinessReady Ind="false"/>
+                  <Conventions Ind="false"/>
+                  <Dataport Ind="false"/>
+                  <Dining Ind="true"/>
+                  <DryClean Ind="false"/>
+                  <EcoCertified Ind="false"/>
+                  <ExecutiveFloors Ind="false"/>
+                  <FitnessCenter Ind="false"/>
+                  <FreeLocalCalls Ind="false"/>
+                  <FreeParking Ind="true"/>
+                  <FreeShuttle Ind="true"/>
+                  <FreeWifiInMeetingRooms Ind="false"/>
+                  <FreeWifiInPublicSpaces Ind="false"/>
+                  <FreeWifiInRooms Ind="false"/>
+                  <FullServiceSpa Ind="false"/>
+                  <GameFacilities Ind="false"/>
+                  <Golf Ind="false"/>
+                  <HighSpeedInternet Ind="true"/>
+                  <HypoallergenicRooms Ind="false"/>
+                  <IndoorPool Ind="false"/>
+                  <InRoomCoffeeTea Ind="false"/>
+                  <InRoomMiniBar Ind="false"/>
+                  <InRoomRefrigerator Ind="false"/>
+                  <InRoomSafe Ind="false"/>
+                  <InteriorDoorways Ind="false"/>
+                  <Jacuzzi Ind="false"/>
+                  <KidsFacilities Ind="false"/>
+                  <KitchenFacilities Ind="false"/>
+                  <MealService Ind="false"/>
+                  <MeetingFacilities Ind="false"/>
+                  <NoAdultTV Ind="false"/>
+                  <NonSmoking Ind="true"/>
+                  <OutdoorPool Ind="true"/>
+                  <Pets Ind="false"/>
+                  <Pool Ind="true"/>
+                  <PublicTransportationAdjacent Ind="false"/>
+                  <RateAssured Ind="true"/>
+                  <Recreation Ind="false"/>
+                  <RestrictedRoomAccess Ind="false"/>
+                  <RoomService Ind="true"/>
+                  <RoomService24Hours Ind="false"/>
+                  <RoomsWithBalcony Ind="false"/>
+                  <SkiInOutProperty Ind="false"/>
+                  <SmokeFree Ind="false"/>
+                  <SmokingRoomsAvail Ind="false"/>
+                  <Tennis Ind="false"/>
+                  <WaterPurificationSystem Ind="false"/>
+                  <Wheelchair Ind="true"/>
+                </PropertyOptionInfo>
+                <RoomRate RateLevelCode="RAC">
+                  <AdditionalInfo>
+                    <CancelPolicy Numeric="00"/>
+                  </AdditionalInfo>
+                  <HotelRateCode>RAC</HotelRateCode>
+                </RoomRate>
+                <SpecialOffers Ind="false"/>
+              </BasicPropertyInfo>
+            </AvailabilityOption>
+          </AvailabilityOptions>
+        </OTA_HotelAvailRS>
+      </soap-env:Body>
+    </soap-env:Envelope>
+  </OTA_HotelAvailLLSRQ-RS>
+  <SessionCloseRQ-RS>
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://schemas.xmlsoap.org/ws/2002/12/secext" xmlns:mes="http://www.ebxml.org/namespaces/messageHeader" xmlns:ns="http://www.opentravel.org/OTA/2002/11">
+      <soapenv:Header>
+        <sec:Security>
+          <!--Optional:-->
+          <sec:UsernameToken>
+            <!--Optional:-->
+            <sec:Username></sec:Username>
+            <!--Optional:-->
+            <sec:Password></sec:Password>
+            <!--0 to 2 repetitions:-->
+            <sec:NewPassword></sec:NewPassword>
+            <!--Optional:-->
+            <Organization></Organization>
+            <!--Optional:-->
+            <Domain></Domain>
+          </sec:UsernameToken>
+          <!--Optional:-->
+          <sec:SabreAth></sec:SabreAth>
+          <!--Optional:-->
+          <sec:BinarySecurityToken>${#Project#BinarySecurityToken}</sec:BinarySecurityToken>
+        </sec:Security>
+        <mes:MessageHeader mes:id="" mes:version="">
+          <mes:From>
+            <!--1 or more repetitions:-->
+            <mes:PartyId mes:type=""></mes:PartyId>
+            <!--Optional:-->
+            <mes:Role></mes:Role>
+          </mes:From>
+          <mes:To>
+            <!--1 or more repetitions:-->
+            <mes:PartyId mes:type=""></mes:PartyId>
+            <!--Optional:-->
+            <mes:Role></mes:Role>
+          </mes:To>
+          <mes:CPAId></mes:CPAId>
+          <mes:ConversationId>SessionClose</mes:ConversationId>
+          <mes:Service mes:type=""></mes:Service>
+          <mes:Action>SessionCloseRQ</mes:Action>
+          <mes:MessageData>
+            <mes:MessageId></mes:MessageId>
+            <mes:Timestamp></mes:Timestamp>
+            <!--Optional:-->
+            <mes:RefToMessageId></mes:RefToMessageId>
+            <!--Optional:-->
+            <mes:TimeToLive></mes:TimeToLive>
+            <!--Optional:-->
+            <mes:Timeout>60</mes:Timeout>
+          </mes:MessageData>
+          <!--Optional:-->
+          <mes:DuplicateElimination></mes:DuplicateElimination>
+          <!--Zero or more repetitions:-->
+          <mes:Description xml:lang=""></mes:Description>
+          <!--You may enter ANY elements at this point-->
+        </mes:MessageHeader>
+      </soapenv:Header>
+      <soapenv:Body>
+        <ns:SessionCloseRQ>
+          <ns:POS>
+            <ns:Source PseudoCityCode=""/>
+          </ns:POS>
+        </ns:SessionCloseRQ>
+      </soapenv:Body>
+    </soapenv:Envelope>
+    <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap-env:Header>
+        <eb:MessageHeader eb:version="1.0" soap-env:mustUnderstand="1" xmlns:eb="http://www.ebxml.org/namespaces/messageHeader">
+          <eb:From>
+            <eb:PartyId eb:type=""/>
+          </eb:From>
+          <eb:To>
+            <eb:PartyId eb:type=""/>
+          </eb:To>
+          <eb:ConversationId>SessionClose</eb:ConversationId>
+          <eb:Service eb:type="sabreXML">Session</eb:Service>
+          <eb:Action>SessionCloseRS</eb:Action>
+          <eb:MessageData>
+            <eb:MessageId>1699272203273231760</eb:MessageId>
+            <eb:Timestamp>2016-09-29T05:38:47</eb:Timestamp>
+          </eb:MessageData>
+        </eb:MessageHeader>
+        <wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/12/secext">
+          <wsse:BinarySecurityToken valueType="String" EncodingType="wsse:Base64Binary">Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/ACPCRTC!ICESMSLB\/CRT.LB!-3356607285526290303!1028914!0!2</wsse:BinarySecurityToken>
+        </wsse:Security>
+      </soap-env:Header>
+      <soap-env:Body>
+        <SessionCloseRS version="1" status="Approved" xmlns="http://www.opentravel.org/OTA/2002/11"/>
+      </soap-env:Body>
+    </soap-env:Envelope>
+  </SessionCloseRQ-RS>
+</HotelSOAP>
